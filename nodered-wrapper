@@ -1,0 +1,10 @@
+#!/bin/sh
+
+echo "Args: $@"
+echo "User: ${NR_ADMIN_USER}"
+echo "Password: ${NR_ADMIN_PASS}"
+
+sed -i.bak "s/NR_ADMIN_USER/${NR_ADMIN_USER}/" /data/settings.js 
+sed -i.bak "s/NR_ADMIN_PASS/${NR_ADMIN_PASS}/" /data/settings.js
+
+exec "$@"
